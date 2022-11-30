@@ -32,7 +32,7 @@ export default function YoutubeVideoCard(props) {
       gap="0"
       direction="row"
       width="unset"
-      height="406px"
+      height="unset"
       justifyContent="center"
       alignItems="center"
       position="relative"
@@ -124,7 +124,7 @@ export default function YoutubeVideoCard(props) {
           </Flex>
           <Text
             fontFamily="Inter"
-            fontSize="24px"
+            fontSize="16px"
             fontWeight="700"
             color="rgba(149,4,149,1)"
             lineHeight="25px"
@@ -168,7 +168,7 @@ export default function YoutubeVideoCard(props) {
         >
           <Text
             fontFamily="Inter"
-            fontSize="20px"
+            fontSize="14px"
             fontWeight="400"
             color="rgba(0,0,0,1)"
             lineHeight="24px"
@@ -176,7 +176,7 @@ export default function YoutubeVideoCard(props) {
             display="block"
             direction="column"
             justifyContent="unset"
-            letterSpacing="0.05px"
+            letterSpacing="0px"
             width="unset"
             height="unset"
             gap="unset"
