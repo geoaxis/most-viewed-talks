@@ -5,7 +5,6 @@ import awsconfig from '../src/aws-exports';
 
 import "@aws-amplify/ui-react/styles.css";
 import { studioTheme } from "../src/ui-components";
-import '@fontsource/inter/variable.css';
 
 
 
@@ -13,20 +12,21 @@ Amplify.configure(awsconfig);
 
 import { AwsRum } from 'aws-rum-web';
 
+
 try {
   const config = {
     sessionSampleRate: 1,
-    guestRoleArn: "arn:aws:iam::518912499641:role/RUM-Monitor-eu-west-1-518912499641-8502404389661-Unauth",
-    identityPoolId: "eu-west-1:985897d8-acf4-4ad3-a595-da94149558f4",
-    endpoint: "https://dataplane.rum.eu-west-1.amazonaws.com",
+    guestRoleArn: process.env.RUM_GUEST_ROLE_ARN,
+    identityPoolId: process.env.RUM_IDENTITY_POOL_ID,
+    endpoint: process.env.RUM_ENDPOINT,
     telemetries: ["performance","errors","http"],
     allowCookies: true,
     enableXRay: false
   };
 
-  const APPLICATION_ID = '6fbeb63f-f0c5-4725-a14b-46ecbf6e87df';
-  const APPLICATION_VERSION = '1.0.0';
-  const APPLICATION_REGION = 'eu-west-1';
+  const APPLICATION_ID = process.env.RUM_APPLICATION_ID;
+  const APPLICATION_VERSION = process.env.RUM_APPLICATION_VERSION;
+  const APPLICATION_REGION = process.env.RUM_APPLICATION_REGION;
 
   const awsRum = new AwsRum(
     APPLICATION_ID,
