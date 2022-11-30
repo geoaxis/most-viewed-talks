@@ -30,15 +30,14 @@ export default function YoutubeVideoCardCollection(props) {
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
-      type="grid"
+      type="list"
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={6}
-      templateColumns="1fr 1fr"
-      autoFlow="row"
+      direction="column"
       alignItems="stretch"
-      justifyContent="stretch"
+      justifyContent="left"
       items={items || []}
       {...rest}
       {...getOverrideProps(overrides, "YoutubeVideoCardCollection")}
