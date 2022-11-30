@@ -23,12 +23,13 @@ export default function YoutubeVideoCardCollection(props) {
   return (
     <Collection
       type="list"
-      isSearchable={true}
+      isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={6}
       direction="column"
-      justifyContent="left"
+      alignItems="stretch"
+      justifyContent="stretch"
       items={items || []}
       {...rest}
       {...getOverrideProps(overrides, "YoutubeVideoCardCollection")}

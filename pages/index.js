@@ -8,7 +8,7 @@ import { google } from 'googleapis'
 const Home = (props) => {
   return (
     <>
-     <h1>Most Played Talks : Last Updated {props.lastUpdated}</h1>
+     <h1>Most viewed talks AWS reInvent 2022 : Last Updated {props.lastUpdated}</h1>
      <YoutubeVideoCardCollection items={props.items} />
     </>
   )
@@ -70,7 +70,7 @@ export async function getStaticProps() {
     timeZone: 'Europe/Berlin',
   })
 
-  let items = data?.reduce((a, c) => a.concat({ id: c.id, videoThumbnail: c.snippet.thumbnails.standard.url, videoTitle: c.snippet.title, videoDescription: c.snippet.description, videoPlays: c.statistics.viewCount }), new Array())
+  let items = data?.reduce((a, c) => a.concat({ id: c.id, videoThumbnail: c.snippet.thumbnails.medium.url, videoTitle: c.snippet.title, videoDescription: c.snippet.description, videoPlays: c.statistics.viewCount }), new Array())
 
   // Pass data to the page via props
   return { props: { items, lastUpdated } }
