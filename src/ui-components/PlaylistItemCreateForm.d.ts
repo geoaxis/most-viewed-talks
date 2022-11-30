@@ -1,0 +1,49 @@
+/***************************************************************************
+ * The contents of this file were generated with Amplify Studio.           *
+ * Please refrain from making any modifications to this file.              *
+ * Any changes to this file will be overwritten when running amplify pull. *
+ **************************************************************************/
+
+import * as React from "react";
+import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { GridProps, TextFieldProps } from "@aws-amplify/ui-react";
+export declare type ValidationResponse = {
+    hasError: boolean;
+    errorMessage?: string;
+};
+export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
+export declare type PlaylistItemCreateFormInputValues = {
+    playlistName?: string;
+    videoTitle?: string;
+    videoDescription?: string;
+    videoPlays?: number;
+    videoThumbnail?: string;
+};
+export declare type PlaylistItemCreateFormValidationValues = {
+    playlistName?: ValidationFunction<string>;
+    videoTitle?: ValidationFunction<string>;
+    videoDescription?: ValidationFunction<string>;
+    videoPlays?: ValidationFunction<number>;
+    videoThumbnail?: ValidationFunction<string>;
+};
+export declare type FormProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
+export declare type PlaylistItemCreateFormOverridesProps = {
+    PlaylistItemCreateFormGrid?: FormProps<GridProps>;
+    playlistName?: FormProps<TextFieldProps>;
+    videoTitle?: FormProps<TextFieldProps>;
+    videoDescription?: FormProps<TextFieldProps>;
+    videoPlays?: FormProps<TextFieldProps>;
+    videoThumbnail?: FormProps<TextFieldProps>;
+} & EscapeHatchProps;
+export declare type PlaylistItemCreateFormProps = React.PropsWithChildren<{
+    overrides?: PlaylistItemCreateFormOverridesProps | undefined | null;
+} & {
+    clearOnSuccess?: boolean;
+    onSubmit?: (fields: PlaylistItemCreateFormInputValues) => PlaylistItemCreateFormInputValues;
+    onSuccess?: (fields: PlaylistItemCreateFormInputValues) => void;
+    onError?: (fields: PlaylistItemCreateFormInputValues, errorMessage: string) => void;
+    onCancel?: () => void;
+    onChange?: (fields: PlaylistItemCreateFormInputValues) => PlaylistItemCreateFormInputValues;
+    onValidate?: PlaylistItemCreateFormValidationValues;
+}>;
+export default function PlaylistItemCreateForm(props: PlaylistItemCreateFormProps): React.ReactElement;

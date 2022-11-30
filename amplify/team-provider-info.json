@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mostviewedtalks-staging-113029-authRole",
+      "UnauthRoleArn": "arn:aws:iam::518912499641:role/amplify-mostviewedtalks-staging-113029-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::518912499641:role/amplify-mostviewedtalks-staging-113029-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-mostviewedtalks-staging-113029-deployment",
+      "UnauthRoleName": "amplify-mostviewedtalks-staging-113029-unauthRole",
+      "StackName": "amplify-mostviewedtalks-staging-113029",
+      "StackId": "arn:aws:cloudformation:eu-west-1:518912499641:stack/amplify-mostviewedtalks-staging-113029/64c09930-70a2-11ed-b2ba-0af9c36f0cd5",
+      "AmplifyAppId": "dvrkszo01pm9h"
+    }
+  }
+}
