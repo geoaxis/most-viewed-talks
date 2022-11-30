@@ -31,9 +31,9 @@ export default function YoutubeVideoCard(props) {
     <Flex
       gap="0"
       direction="row"
-      width="1440px"
-      height="unset"
-      justifyContent="center"
+      width="900px"
+      height="502px"
+      justifyContent="flex-start"
       alignItems="center"
       position="relative"
       boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"

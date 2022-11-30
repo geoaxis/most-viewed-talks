@@ -30,12 +30,13 @@ export default function YoutubeVideoCardCollection(props) {
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
-      type="list"
+      type="grid"
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={6}
-      direction="column"
+      templateColumns="1fr 1fr"
+      autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
@@ -50,6 +51,9 @@ export default function YoutubeVideoCardCollection(props) {
           videoPlays={item.videoPlays}
           videoThumbnailUrl={item.videoThumbnail}
           id={item.id}
+          height="auto"
+          width="auto"
+          margin="5rem 5rem 5rem 5rem"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></YoutubeVideoCard>

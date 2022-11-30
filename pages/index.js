@@ -2,15 +2,21 @@ import {
   YoutubeVideoCardCollection
 } from '../src/ui-components';
 
-import { Heading } from '@aws-amplify/ui-react'
+import { Heading, Flex } from '@aws-amplify/ui-react'
 
 import { google } from 'googleapis'
 
 
 const Home = (props) => {
   return (
-    <>
-
+    <Flex
+      direction="column"
+      justifyContent="center"
+      alignItems="stretch"
+      alignContent="center"
+      wrap="nowrap"
+      gap="1rem"
+    >
       <Heading
         width='50vw'
         level={2}
@@ -22,11 +28,14 @@ const Home = (props) => {
         width='30vw'
         level={6}
       >
-        {props.lastUpdated}
+        Last Updated: {props.lastUpdated} (Stockholm/Sweden)
       </Heading>
 
       <YoutubeVideoCardCollection items={props.items} />
-    </>
+    </Flex>
+
+
+
   )
 }
 
