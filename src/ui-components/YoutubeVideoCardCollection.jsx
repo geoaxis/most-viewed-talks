@@ -6,6 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
+import { SortDirection } from "@aws-amplify/datastore";
 import { PlaylistItem } from "../models";
 import {
   getOverrideProps,
@@ -15,9 +16,16 @@ import YoutubeVideoCard from "./YoutubeVideoCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function YoutubeVideoCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsPagination = {
+    sort: (s) =>
+      s
+        .videoPlays(SortDirection.ASCENDING)
+        .videoPlays(SortDirection.DESCENDING),
+  };
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: PlaylistItem,
+    pagination: itemsPagination,
   }).items;
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
@@ -41,6 +49,7 @@ export default function YoutubeVideoCardCollection(props) {
           videoDescription={item.videoDescription}
           videoPlays={item.videoPlays}
           videoThumbnailUrl={item.videoThumbnail}
+          id={item.id}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></YoutubeVideoCard>

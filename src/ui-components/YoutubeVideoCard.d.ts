@@ -13,6 +13,7 @@ export declare type YoutubeVideoCardProps = React.PropsWithChildren<Partial<Flex
     videoDescription?: String;
     videoPlays?: Number;
     videoThumbnailUrl?: String;
+    id?: String;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

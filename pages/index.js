@@ -2,19 +2,37 @@ import {
   YoutubeVideoCardCollection
 } from '../src/ui-components';
 
+import { Heading } from '@aws-amplify/ui-react'
+
 import { google } from 'googleapis'
 
 
 const Home = (props) => {
   return (
     <>
-     <h1>Most viewed talks AWS reInvent 2022 : Last Updated {props.lastUpdated}</h1>
-     <YoutubeVideoCardCollection items={props.items} />
+
+      <Heading
+        width='50vw'
+        level={2}
+      >
+        Most viewed talks AWS reInvent 2022
+      </Heading>
+
+      <Heading
+        width='30vw'
+        level={6}
+      >
+        {props.lastUpdated}
+      </Heading>
+
+      <YoutubeVideoCardCollection items={props.items} />
     </>
   )
 }
 
-
+let getMainDescription = (fullDescription) => {
+  return fullDescription.split("Subscribe:")[0];
+}
 export async function getStaticProps() {
 
   const youtube = google.youtube({
@@ -70,10 +88,11 @@ export async function getStaticProps() {
     timeZone: 'Europe/Berlin',
   })
 
-  let items = data?.reduce((a, c) => a.concat({ id: c.id, videoThumbnail: c.snippet.thumbnails.medium.url, videoTitle: c.snippet.title, videoDescription: c.snippet.description, videoPlays: c.statistics.viewCount }), new Array())
+  let items = data?.reduce((a, c) => a.concat({ id: c.id, videoThumbnail: c.snippet.thumbnails.medium.url, videoTitle: c.snippet.title, videoDescription: getMainDescription(c.snippet.description), videoPlays: c.statistics.viewCount }), new Array())
 
   // Pass data to the page via props
   return { props: { items, lastUpdated } }
 }
+
 
 export default Home;

@@ -6,7 +6,10 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function YoutubeVideoCard(props) {
   const {
@@ -15,9 +18,15 @@ export default function YoutubeVideoCard(props) {
     videoDescription,
     videoPlays,
     videoThumbnailUrl,
+    id,
     overrides,
     ...rest
   } = props;
+  const imageOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: `${"https://youtu.be/"}${id}`,
+  });
   return (
     <Flex
       gap="0"
@@ -44,6 +53,9 @@ export default function YoutubeVideoCard(props) {
         padding="0px 0px 0px 0px"
         objectFit="cover"
         src={videoThumbnailUrl}
+        onClick={() => {
+          imageOnClick();
+        }}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
