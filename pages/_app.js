@@ -39,7 +39,7 @@ try {
 function MyApp({ Component, pageProps }) {
   
   return (
-    <ThemeProvider theme={studioTheme}>
+    <ThemeProvider theme={studioTheme} colorMode={light}>
       <Component {...pageProps} />
     </ThemeProvider>);
 }
