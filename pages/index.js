@@ -3,7 +3,6 @@ import {
 } from '../src/ui-components';
 
 
-
 import { Heading, Flex } from '@aws-amplify/ui-react'
 
 import { google } from 'googleapis'
@@ -42,7 +41,7 @@ const Home = (props) => {
 }
 
 let getMainDescription = (fullDescription) => {
-  return fullDescription.split(/(?:Subscribe|Guest Speakers)+/)[0];
+  return fullDescription.split(/(?:Subscribe|Guest Speakers|00:0)+/)[0];
 }
 export async function getStaticProps() {
 
