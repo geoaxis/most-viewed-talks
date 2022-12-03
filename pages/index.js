@@ -1,24 +1,23 @@
 import {
-  YoutubeVideoCardCollection, MainHeading
+  YoutubeVideoCardCollection, MainHeading, studioTheme
 } from '../src/ui-components';
 
 
-import { Flex } from '@aws-amplify/ui-react'
+import { Divider, ThemeProvider} from '@aws-amplify/ui-react'
 
 import { google } from 'googleapis'
+import styles from '../styles/Home.module.css'
 
 
 const Home = (props) => {
   return (
-    <Flex
-      direction="column"
-      justifyContent="center"
-      alignContent="center"
-      gap="1rem"
-    >
-      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading="Last Updated: {props.lastUpdated} (Stockholm/Sweden)"/>
-      <YoutubeVideoCardCollection items={props.items} />
-    </Flex>
+    <>
+      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading={`Last updated at  ${props.lastUpdated}(Stockholm/Sweden)`}/>
+      <Divider></Divider>
+
+      <YoutubeVideoCardCollection    items={props.items} />
+
+      </>
 
 
 

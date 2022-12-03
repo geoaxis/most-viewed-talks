@@ -34,10 +34,10 @@ export default function YoutubeVideoCardCollection(props) {
       isSearchable="true"
       isPaginated={true}
       searchPlaceholder="Search..."
-      itemsPerPage={6}
+      itemsPerPage={4}
       direction="column"
       alignItems="stretch"
-      justifyContent="left"
+      justifyContent="stretch"
       items={items || []}
       {...rest}
       {...getOverrideProps(overrides, "YoutubeVideoCardCollection")}

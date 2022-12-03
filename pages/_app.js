@@ -36,6 +36,8 @@ try {
   // Ignore errors thrown during CloudWatch RUM web client initialization
 }
 
+
+
 function MyApp({ Component, pageProps }) {
   
   return (

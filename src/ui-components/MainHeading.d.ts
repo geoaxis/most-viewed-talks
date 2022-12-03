@@ -6,8 +6,8 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { ViewProps } from "@aws-amplify/ui-react";
-export declare type MainHeadingProps = React.PropsWithChildren<Partial<ViewProps> & {
+import { FlexProps } from "@aws-amplify/ui-react";
+export declare type MainHeadingProps = React.PropsWithChildren<Partial<FlexProps> & {
     title?: String;
     subheading?: String;
 } & {
