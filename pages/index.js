@@ -1,9 +1,9 @@
 import {
-  YoutubeVideoCardCollection
+  YoutubeVideoCardCollection, MainHeading
 } from '../src/ui-components';
 
 
-import { Heading, Flex } from '@aws-amplify/ui-react'
+import { Flex } from '@aws-amplify/ui-react'
 
 import { google } from 'googleapis'
 
@@ -13,25 +13,10 @@ const Home = (props) => {
     <Flex
       direction="column"
       justifyContent="center"
-      alignItems="stretch"
       alignContent="center"
-      wrap="nowrap"
       gap="1rem"
     >
-      <Heading
-        width='50vw'
-        level={2}
-      >
-        Most viewed talks AWS reInvent 2022
-      </Heading>
-
-      <Heading
-        width='30vw'
-        level={6}
-      >
-        Last Updated: {props.lastUpdated} (Stockholm/Sweden)
-      </Heading>
-
+      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading="Last Updated: {props.lastUpdated} (Stockholm/Sweden)"/>
       <YoutubeVideoCardCollection items={props.items} />
     </Flex>
 

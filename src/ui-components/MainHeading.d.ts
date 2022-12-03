@@ -7,7 +7,10 @@
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { ViewProps } from "@aws-amplify/ui-react";
-export declare type HoverImageProps = React.PropsWithChildren<Partial<ViewProps> & {
+export declare type MainHeadingProps = React.PropsWithChildren<Partial<ViewProps> & {
+    title?: String;
+    subheading?: String;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function HoverImage(props: HoverImageProps): React.ReactElement;
+export default function MainHeading(props: MainHeadingProps): React.ReactElement;

@@ -5,9 +5,9 @@
  **************************************************************************/
 
 export { default as YoutubeVideoCard } from "./YoutubeVideoCard";
-export { default as HoverImage } from "./HoverImage";
 export { default as YoutubeVideoCardCollection } from "./YoutubeVideoCardCollection";
 export { default as MyIcon } from "./MyIcon";
+export { default as MainHeading } from "./MainHeading";
 export { default as NavBar } from "./NavBar";
 export { default as studioTheme } from "./studioTheme";
 export { default as PlaylistItemCreateForm } from "./PlaylistItemCreateForm";

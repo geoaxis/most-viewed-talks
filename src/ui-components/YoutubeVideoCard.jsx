@@ -41,23 +41,6 @@ export default function YoutubeVideoCard(props) {
       {...rest}
       {...getOverrideProps(overrides, "YoutubeVideoCard")}
     >
-      <Image
-        width="320px"
-        height="180px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        objectFit="cover"
-        src={videoThumbnailUrl}
-        onClick={() => {
-          imageOnClick();
-        }}
-        {...getOverrideProps(overrides, "image")}
-      ></Image>
       <Flex
         gap="24px"
         direction="column"
@@ -145,6 +128,23 @@ export default function YoutubeVideoCard(props) {
             {...getOverrideProps(overrides, "Video Title")}
           ></Text>
         </Flex>
+        <Image
+          width="320px"
+          height="180px"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          objectFit="cover"
+          src={videoThumbnailUrl}
+          onClick={() => {
+            imageOnClick();
+          }}
+          {...getOverrideProps(overrides, "image")}
+        ></Image>
         <Divider
           width="40px"
           shrink="0"
