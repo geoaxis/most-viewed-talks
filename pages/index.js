@@ -3,29 +3,33 @@ import {
 } from '../src/ui-components';
 
 
-import { Divider, ThemeProvider} from '@aws-amplify/ui-react'
+import { Divider, ThemeProvider } from '@aws-amplify/ui-react'
 
 import { google } from 'googleapis'
-import styles from '../styles/Home.module.css'
 
-
+import styles from './VideoImage.module.css'
 const Home = (props) => {
   return (
     <>
-      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading={`Last updated at  ${props.lastUpdated}(Stockholm/Sweden)`}/>
+      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading={`Last updated at  ${props.lastUpdated}(Stockholm/Sweden)`} />
       <Divider></Divider>
 
-      <YoutubeVideoCardCollection    items={props.items} />
+      <YoutubeVideoCardCollection items={props.items}
+        overrideItems={(item, index) => {
+          return {
+            overrides: { 'image': { className: styles.VideoImage } }
+          }
+        }}
+      />
 
-      </>
-
+    </>
 
 
   )
 }
 
 let getMainDescription = (fullDescription) => {
-  return fullDescription.split(/(?:Subscribe|Guest Speakers|00:0)+/)[0];
+  return fullDescription.split(/(?:Subscribe|Guest Speakers|Guest speakers|00:0)+/)[0];
 }
 export async function getStaticProps() {
 
