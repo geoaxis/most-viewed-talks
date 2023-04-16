@@ -90,7 +90,8 @@ export async function getStaticProps() {
 
   // Pass data to the page via props
   return { props: { items, lastUpdated }, 
-           revalidate: 3600 // revalidate every hour }
+           revalidate: 3600 // revalidate every hour 
+          }
 }
 
 
