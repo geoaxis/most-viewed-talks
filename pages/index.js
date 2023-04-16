@@ -89,7 +89,8 @@ export async function getStaticProps() {
   let items = data?.reduce((a, c) => a.concat({ id: c.id, videoThumbnail: c.snippet.thumbnails.medium.url, videoTitle: c.snippet.title, videoDescription: getMainDescription(c.snippet.description), videoPlays: c.statistics.viewCount }), new Array())
 
   // Pass data to the page via props
-  return { props: { items, lastUpdated } }
+  return { props: { items, lastUpdated }, 
+           revalidate: 3600 // revalidate every hour }
 }
 
 
