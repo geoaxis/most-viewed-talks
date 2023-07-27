@@ -10,7 +10,7 @@ import { studioTheme } from "../src/ui-components";
 
 
 
-Amplify.configure(awsconfig);
+Amplify.configure( {...awsconfig, ssr: true });
 
 import { AwsRum } from 'aws-rum-web';
 
