@@ -11,7 +11,7 @@ import styles from './VideoImage.module.css'
 const Home = (props) => {
   return (
     <>
-      <MainHeading title="Most viewed talks AWS reInvent 2022." subheading={`Last updated at  ${props.lastUpdated}(Stockholm/Sweden)`} />
+      <MainHeading title="Most viewed talks {process.env.CONFERENCE}." subheading={`Last updated at  ${props.lastUpdated}(Stockholm/Sweden)`} />
       <Divider></Divider>
 
       <YoutubeVideoCardCollection items={props.items}
