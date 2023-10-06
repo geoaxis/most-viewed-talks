@@ -29,7 +29,10 @@ const Home = (props) => {
 }
 
 let getMainDescription = (fullDescription) => {
-  return fullDescription.split(/(?:Subscribe|Guest Speakers|Guest speakers|00:0)+/)[0];
+  let result = fullDescription.split(/(?:Subscribe|Guest Speakers|Guest speakers|00:0)+/)[0];
+
+  if (result == null || result == "") { return fullDescription; }
+  else return result;
 }
 export async function getStaticProps() {
 
