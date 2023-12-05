@@ -30,6 +30,7 @@ const Home = (props) => {
 
 let getMainDescription = (fullDescription) => {
 
+  //includes regexp for a timestamp
   let result = fullDescription.split(/(?:Subscribe|Guest Speakers|\b\d{2}:\d{2}\b)+/)[0];;
 
   if (result == null || result == "") { return fullDescription; }
